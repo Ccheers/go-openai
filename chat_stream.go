@@ -5,6 +5,11 @@ import (
 	"net/http"
 )
 
+type ChatCompletionStreamThinkingBlock struct {
+	Type      string `json:"type"`
+	Thinking  string `json:"thinking"`
+	Signature string `json:"signature"`
+}
 type ChatCompletionStreamChoiceDelta struct {
 	Content      string        `json:"content,omitempty"`
 	Role         string        `json:"role,omitempty"`
@@ -16,7 +21,8 @@ type ChatCompletionStreamChoiceDelta struct {
 	// which is not in the official documentation.
 	// the doc from deepseek:
 	// - https://api-docs.deepseek.com/api/create-chat-completion#responses
-	ReasoningContent string `json:"reasoning_content,omitempty"`
+	ReasoningContent string                              `json:"reasoning_content,omitempty"`
+	ThinkingBlocks   []ChatCompletionStreamThinkingBlock `json:"thinking_blocks"`
 }
 
 type ChatCompletionStreamChoiceLogprobs struct {

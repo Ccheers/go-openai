@@ -88,10 +88,11 @@ const (
 )
 
 type ChatMessagePart struct {
-	Type     ChatMessagePartType  `json:"type,omitempty"`
-	Text     string               `json:"text,omitempty"`
-	Thinking string               `json:"thinking,omitempty"`
-	ImageURL *ChatMessageImageURL `json:"image_url,omitempty"`
+	Type      ChatMessagePartType  `json:"type,omitempty"`
+	Text      string               `json:"text,omitempty"`
+	Thinking  string               `json:"thinking,omitempty"`
+	Signature string               `json:"signature,omitempty"`
+	ImageURL  *ChatMessageImageURL `json:"image_url,omitempty"`
 }
 
 type ChatCompletionMessage struct {
