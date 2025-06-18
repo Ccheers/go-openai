@@ -83,12 +83,14 @@ type ChatMessagePartType string
 
 const (
 	ChatMessagePartTypeText     ChatMessagePartType = "text"
+	ChatMessagePartTypeThinking ChatMessagePartType = "thinking"
 	ChatMessagePartTypeImageURL ChatMessagePartType = "image_url"
 )
 
 type ChatMessagePart struct {
 	Type     ChatMessagePartType  `json:"type,omitempty"`
 	Text     string               `json:"text,omitempty"`
+	Thinking string               `json:"thinking,omitempty"`
 	ImageURL *ChatMessageImageURL `json:"image_url,omitempty"`
 }
 
